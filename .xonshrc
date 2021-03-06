@@ -1,0 +1,39 @@
+from datetime import datetime as dt
+
+# Fundamental behaviours
+$IGNOREEOF = True
+$INDENT = "    "
+$HISTCONTROL = "ignoredumps"
+$XONSH_AUTOPAIR = True
+$AUTO_CD = True
+$XONSH_SHOW_TRACEBACK = True
+$SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
+
+# Suggests
+$CASE_SENSITIVE_COMPLETIONS = False
+$COMPLETIONS_CONFIRM = True
+$AUTO_SUGGEST = True
+$FUZZY_PATH_COMPLETION = True
+$GLOB_SORTED = True
+$SUBSEQUENCE_PATH_COMPLETION = True
+$SUGGEST_COMMANDS = False
+$COMPLETION_IN_THREAD = True
+
+# Visual
+prompt = "{INTENSE_GREEN}{user}@{hostname}{INTENSE_YELLOW} ({short_cwd}){GREEN}\n{BLUE}$"
+$PROMPT = lambda: "{INTENSE_BLUE}" + dt.now().strftime('[%Y-%m-%d %H:%M:%S]') + prompt
+$UPDATE_PROMPT_ON_KEYPRESS = False
+$XONSH_COLOR_STYLE = "native"
+$COLOR_RESULTS = True
+
+$BOTTOM_TOOLBAR = "{WHITE}[{localtime}]{current_job}({cwd}){gitstatus}"
+
+# Settings for `powerline`. commented out beacause it's heavy.
+#$PL_EXTRA_SEC = {"mytime": lambda: [dt.now().strftime(' %Y-%m-%d %H:%M:%S '),'BLACK','INTENSE_BLUE']}
+#$PL_PROMPT='mytime>short_cwd\n'
+#$PL_RPROMPT = '!'
+#$PL_TOOLBAR='who>virtualenv>branch>cwd>full_proc'
+#xontrib load powerline2
+
+# PATH
+#$PATH.append("~/.cargo/bin")
